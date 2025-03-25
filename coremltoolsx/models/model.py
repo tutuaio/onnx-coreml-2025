@@ -132,7 +132,7 @@ def _get_proxy_and_spec(filename, compute_units, skip_model_load=False):
             return (None, specification, None)
 
         try:
-            return (_MLModelProxy(filename, compute_units.name), specification, None)
+            return (_MLModelProxy(filename, compute_units.name, "", {}, None), specification, None)
         except RuntimeError as e:
             _warnings.warn(
                 "You will not be able to run predict() on this Core ML model."
